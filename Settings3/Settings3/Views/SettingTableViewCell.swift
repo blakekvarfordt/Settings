@@ -11,10 +11,28 @@ import UIKit
 class SettingTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
+    @IBOutlet weak var settingImage: UIImageView!
+    @IBOutlet weak var settingLabel: UILabel!
+    @IBOutlet weak var settingSwitch: UISwitch!
     
     // MARK: - Properties
+    var setting: Setting? {
+        didSet {
+            updateViews()
+        }
+    }
     
-    var setting: Setting?
+    // MARK: - Custom Methods
     
+    func updateViews() {
+        if let setting = setting {
+            settingImage.image = setting.icon
+            settingLabel.text = setting.name
+            settingSwitch.isOn = setting.isOn
+            backgroundColor = setting.isOn ? . lightGray : .white
+        } else {
+            
+        }
+    }
 
 }
