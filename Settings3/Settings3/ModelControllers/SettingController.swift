@@ -25,5 +25,7 @@ class SettingController {
         
     }
     
-    
+    func setIsOn(for setting: Setting, isOn: Bool) {
+        setting.isOn = isOn
+    }
 }

@@ -28,8 +28,14 @@ class SettingTableViewController: UITableViewController {
         let setting = SettingController.shared.setting[indexPath.row]
         
         cell.setting = setting
-        
+        cell.delegate = self
         return cell
     }
 
+}
+
+extension SettingTableViewController: SettingTableViewCellDelegate {
+    func cellSettingSwitchedValueChanged(cell: SettingTableViewCell, isOn: Bool) {
+        <#code#>
+    }
 }

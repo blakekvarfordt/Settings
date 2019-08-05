@@ -12,7 +12,7 @@ class Setting {
     
     let name: String
     let icon: UIImage?
-    let isOn: Bool
+    var isOn: Bool
     
     init(name: String, icon: UIImage?, isOn: Bool) {
         self.name = name
