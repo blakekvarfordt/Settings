@@ -37,6 +37,11 @@ class SettingTableViewCell: UITableViewCell {
             settingSwitch.isOn = setting.isOn
             backgroundColor = setting.isOn ? . lightGray : .white
         } else {
+            settingImage.image = nil
+            settingLabel.text = ""
+            settingSwitch.isOn = false
+            
+            backgroundColor = .white
             
         }
     }

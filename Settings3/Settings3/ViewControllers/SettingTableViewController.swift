@@ -36,6 +36,9 @@ class SettingTableViewController: UITableViewController {
 
 extension SettingTableViewController: SettingTableViewCellDelegate {
     func cellSettingSwitchedValueChanged(cell: SettingTableViewCell, isOn: Bool) {
-        <#code#>
+        guard let setting = cell.setting, let indexPath = tableView.indexPath(for: cell) else { return }
+    
+        SettingController.shared.setIsOn(for: setting, isOn: isOn)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }
